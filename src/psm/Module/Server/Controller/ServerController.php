@@ -240,6 +240,10 @@ class ServerController extends AbstractServerController
                 $edit_server[$key] = psm_POST($key, $value);
             }
 
+            $callback_url = $this->buildCallbackUrl(
+                isset($edit_server['callback_token']) ? $edit_server['callback_token'] : null
+            );
+
             $tpl_data = array_merge($tpl_data, array(
                 'edit_value_label' => $edit_server['label'],
                 'edit_value_ip' => $edit_server['ip'],
@@ -259,12 +263,8 @@ class ServerController extends AbstractServerController
                     sha1($edit_server['website_password']),
                 'edit_value_ssl_cert_expiry_days' => $edit_server['ssl_cert_expiry_days'],
                 'edit_value_callback_frequency' => $edit_server['callback_frequency'],
-                'edit_value_callback_url' => $this->buildCallbackUrl(
-                    isset($edit_server['callback_token']) ? $edit_server['callback_token'] : null
-                ),
-                'edit_value_callback_curl' => $this->buildCallbackCurlCommand(
-                    $this->buildCallbackUrl(isset($edit_server['callback_token']) ? $edit_server['callback_token'] : null)
-                ),
+                'edit_value_callback_url' => $callback_url,
+                'edit_value_callback_curl' => $this->buildCallbackCurlCommand($callback_url),
                 'edit_type_selected_' . $edit_server['type'] => 'selected="selected"',
                 'edit_active_selected' => $edit_server['active'],
                 'edit_email_selected' => $edit_server['email'],
@@ -683,6 +683,7 @@ class ServerController extends AbstractServerController
             'label_callback_frequency_description' => psm_get_lang('servers', 'callback_frequency_description'),
             'label_callback_url' => psm_get_lang('servers', 'callback_url'),
             'label_callback_url_description' => psm_get_lang('servers', 'callback_url_description'),
+            'label_callback_url_curl_description' => psm_get_lang('servers', 'callback_url_curl_description'),
             'label_action' => psm_get_lang('system', 'action'),
             'label_save' => psm_get_lang('system', 'save'),
             'label_go_back' => psm_get_lang('system', 'go_back'),

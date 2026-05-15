@@ -265,6 +265,7 @@ $sm_lang = array(
         'callback_frequency_description' => 'Maximum allowed time between callbacks before marking the service offline.',
         'callback_url' => 'Callback URL',
         'callback_url_description' => 'Call this endpoint from your service periodically.',
+        'callback_url_curl_description' => 'Use this example command to trigger the callback endpoint periodically.',
         'ssl_cert_expired' => 'SSL certificate expired since',
         'ssl_cert_expiring' => 'SSL certificate expiring:',
         'chart_last_week' => 'Last week',
