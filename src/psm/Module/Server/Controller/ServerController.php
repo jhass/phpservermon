@@ -682,6 +682,7 @@ class ServerController extends AbstractServerController
             'label_callback_frequency' => psm_get_lang('servers', 'callback_frequency'),
             'label_callback_frequency_description' => psm_get_lang('servers', 'callback_frequency_description'),
             'label_callback_url' => psm_get_lang('servers', 'callback_url'),
+            'label_callback_curl_command' => psm_get_lang('servers', 'callback_curl_command'),
             'label_callback_url_description' => psm_get_lang('servers', 'callback_url_description'),
             'label_callback_url_curl_description' => psm_get_lang('servers', 'callback_url_curl_description'),
             'label_action' => psm_get_lang('system', 'action'),
