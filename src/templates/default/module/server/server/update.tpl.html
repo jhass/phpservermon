@@ -24,7 +24,7 @@
 			<!-- Callback URL -->
 			{{ macro.input_field("text", "callback_url", "types typeCallback", null, label_callback_url, edit_value_callback_url, null, null, 'callback_url_help', label_callback_url_description, null, true) }}
 			<!-- Callback curl command -->
-			{{ macro.input_field("text", "callback_url_curl", "types typeCallback", null, label_callback_url ~ ' (curl)', edit_value_callback_url ? 'curl -fsS "' ~ edit_value_callback_url ~ '"' : '', null, null, 'callback_url_curl_help', label_callback_url_description, null, true) }}
+			{{ macro.input_field("text", "callback_url_curl", "types typeCallback", null, label_callback_url ~ ' (curl)', edit_value_callback_curl, null, null, 'callback_url_curl_help', label_callback_url_description, null, true) }}
 			<!-- Port -->
 			<div class="form-group types typeService">
 				<label for="popular_ports">{{ label_port }}</label>

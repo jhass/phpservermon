@@ -172,6 +172,7 @@ class ServerController extends AbstractServerController
         $tpl_data = $this->getLabels();
         self::setDefaultMonitoringNotificationsToConfiguredValues( $tpl_data );
         $tpl_data['edit_value_callback_url'] = '';
+        $tpl_data['edit_value_callback_curl'] = '';
 
         $tpl_data['edit_server_id'] = $this->server_id;
         $tpl_data['url_save'] = psm_build_url(array(
@@ -260,6 +261,9 @@ class ServerController extends AbstractServerController
                 'edit_value_callback_frequency' => $edit_server['callback_frequency'],
                 'edit_value_callback_url' => $this->buildCallbackUrl(
                     isset($edit_server['callback_token']) ? $edit_server['callback_token'] : null
+                ),
+                'edit_value_callback_curl' => $this->buildCallbackCurlCommand(
+                    $this->buildCallbackUrl(isset($edit_server['callback_token']) ? $edit_server['callback_token'] : null)
                 ),
                 'edit_type_selected_' . $edit_server['type'] => 'selected="selected"',
                 'edit_active_selected' => $edit_server['active'],

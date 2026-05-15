@@ -126,6 +126,7 @@ abstract class AbstractServerController extends AbstractController
         $server['last_offline'] = psm_timespan($server['last_offline']);
         $server['callback_last_call'] = psm_timespan($server['callback_last_call']);
         $server['callback_url'] = $this->buildCallbackUrl($server['callback_token']);
+        $server['callback_curl_command'] = $this->buildCallbackCurlCommand($server['callback_url']);
         if ($server['last_offline'] != psm_get_lang('system', 'never')) {
             $server['last_offline_duration'] = is_null($server['last_offline_duration']) ?
                 null : "(" . $server['last_offline_duration'] . ")";
@@ -184,5 +185,19 @@ abstract class AbstractServerController extends AbstractController
             true,
             false
         );
+    }
+
+    /**
+     * Build callback curl command from callback URL
+     * @param string $callback_url
+     * @return string
+     */
+    protected function buildCallbackCurlCommand($callback_url)
+    {
+        if (empty($callback_url)) {
+            return '';
+        }
+
+        return 'curl -fsS ' . escapeshellarg($callback_url);
     }
 }
