@@ -70,8 +70,14 @@
 				{% if callback_url %}
 				<li class="list-group-item">
 					<dl class="row">
-						<dt class="col-md-6">{{ label_callback_url }}:</dt>
-						<dd class="col-md-6"><code>{{ callback_url }}</code></dd>
+						<dt class="col-md-6">{{ label_callback_frequency }}:</dt>
+						<dd class="col-md-6">{{ callback_frequency }} {{ label_seconds }}</dd>
+					</dl>
+				</li>
+				<li class="list-group-item">
+					<dl class="row">
+						<dt class="col-md-6">{{ label_callback_url }} (curl):</dt>
+						<dd class="col-md-6"><code>curl -fsS &quot;{{ callback_url }}&quot;</code></dd>
 					</dl>
 				</li>
 				{% endif %}
