@@ -26,6 +26,7 @@ namespace psm\Module\Server\Controller;
 
 use psm\Module\AbstractController;
 use psm\Service\Database;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -44,7 +45,8 @@ class CallbackController extends AbstractController
 
     protected function executeIndex()
     {
-        if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+        $request = Request::createFromGlobals();
+        if ($request->getMethod() !== 'GET') {
             return new Response('Method Not Allowed', 405, array('Allow' => 'GET'));
         }
 

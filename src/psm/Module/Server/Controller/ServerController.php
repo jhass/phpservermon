@@ -358,7 +358,7 @@ class ServerController extends AbstractServerController
 
         if ($clean['type'] === 'callback') {
             if (empty($clean['ip'])) {
-                $clean['ip'] = 'callback';
+                $clean['ip'] = 'localhost';
             }
             $clean['port'] = 0;
             $clean['request_method'] = null;

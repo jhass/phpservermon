@@ -394,7 +394,7 @@ class StatusUpdater
         }
 
         $elapsed = time() - $last_call_ts;
-        if ($elapsed > $frequency) {
+        if ($elapsed >= $frequency) {
             $this->error = 'CALLBACK ERROR: Last callback was ' . $elapsed . ' seconds ago.';
             return false;
         }
