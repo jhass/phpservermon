@@ -22,7 +22,9 @@
 			<!-- Callback frequency -->
 			{{ macro.input_field("number", "callback_frequency", "types typeCallback", "callback_frequency", label_callback_frequency, edit_value_callback_frequency, "60", "10", 'callback_frequency_help', label_callback_frequency_description) }}
 			<!-- Callback URL -->
-			{{ macro.input_field("text", "callback_url", "types typeCallback", null, label_callback_url, edit_value_callback_url ? 'curl -fsS "' ~ edit_value_callback_url ~ '"' : '', null, null, 'callback_url_help', label_callback_url_description, null, true) }}
+			{{ macro.input_field("text", "callback_url", "types typeCallback", null, label_callback_url, edit_value_callback_url, null, null, 'callback_url_help', label_callback_url_description, null, true) }}
+			<!-- Callback curl command -->
+			{{ macro.input_field("text", "callback_url_curl", "types typeCallback", null, label_callback_url ~ ' (curl)', edit_value_callback_url ? 'curl -fsS "' ~ edit_value_callback_url ~ '"' : '', null, null, 'callback_url_curl_help', label_callback_url_description, null, true) }}
 			<!-- Port -->
 			<div class="form-group types typeService">
 				<label for="popular_ports">{{ label_port }}</label>
