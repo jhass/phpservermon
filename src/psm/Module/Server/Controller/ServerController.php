@@ -681,6 +681,7 @@ class ServerController extends AbstractServerController
             'label_ssl_cert_expiry_days_description' => psm_get_lang('servers', 'ssl_cert_expiry_days_description'),
             'label_callback_frequency' => psm_get_lang('servers', 'callback_frequency'),
             'label_callback_frequency_description' => psm_get_lang('servers', 'callback_frequency_description'),
+            'label_callback_last_received' => psm_get_lang('servers', 'callback_last_received'),
             'label_callback_url' => psm_get_lang('servers', 'callback_url'),
             'label_callback_curl_command' => psm_get_lang('servers', 'callback_curl_command'),
             'label_callback_url_description' => psm_get_lang('servers', 'callback_url_description'),

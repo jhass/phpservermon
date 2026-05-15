@@ -263,6 +263,7 @@ $sm_lang = array(
         'ssl_cert_expiry_days_description' => 'The minimum remaining days the SSL certificate is still valid. Use 0 to disable check.',
         'callback_frequency' => 'Expected callback frequency (seconds)',
         'callback_frequency_description' => 'Maximum allowed time between callbacks before marking the service offline.',
+        'callback_last_received' => 'Last callback received',
         'callback_url' => 'Callback URL',
         'callback_curl_command' => 'Callback curl command',
         'callback_url_description' => 'Call this endpoint from your service periodically.',
